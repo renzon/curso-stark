@@ -1,5 +1,9 @@
 def calcular_media(*notas):
-    return notas
+    soma = 0
+    for nota in notas:
+        soma += nota
+
+    return soma / len(notas)
 
 
 if __name__ == '__main__':
