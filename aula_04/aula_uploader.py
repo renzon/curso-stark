@@ -2,6 +2,7 @@ import pyautogui
 from time import sleep
 
 # Incializar Chrome
+pyautogui.PAUSE = 3
 pyautogui.press('win')
 pyautogui.write('firefox')
 pyautogui.press('enter')
