@@ -33,7 +33,7 @@ class Bot(WebBot):
         #     self.maestro.RAISE_NOT_CONNECTED = False
 
         # Configure whether or not to run on headless mode
-        self.headless = False
+        self.headless = True
 
         # Uncomment to change the default Browser to Firefox
         # self.browser = Browser.FIREFOX
@@ -56,7 +56,7 @@ class Bot(WebBot):
         # if not self.find( "um_dolar", matching=0.97, waiting_time=10000):
         #     self.not_found("um_dolar")
                                         #DFlfde SwHCTb
-        span_dolar = self.find_element("DFlfde", waiting_time=10000, by=By.CLASS_NAME)
+        span_dolar = self.find_elements("span.DFlfde", waiting_time=10000, by=By.CSS_SELECTOR)[-1]
         if not span_dolar:
             self.not_found("um_dolar")
 
