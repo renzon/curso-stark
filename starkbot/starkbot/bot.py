@@ -56,14 +56,15 @@ class Bot(WebBot):
         # if not self.find( "um_dolar", matching=0.97, waiting_time=10000):
         #     self.not_found("um_dolar")
                                         #DFlfde SwHCTb
-        span_dolar = self.find_elements("span.DFlfde", waiting_time=10000, by=By.CSS_SELECTOR)[-1]
+        span_dolar = self.find_element("span.DFlfde.SwHCTb", waiting_time=10000, by=By.CSS_SELECTOR)
         if not span_dolar:
             self.not_found("um_dolar")
 
-        cotacao_dolar = span_dolar.get_attribute('data-value')
+        cotacao_dolar = float(span_dolar.get_attribute('data-value'))
         # self.control_c()
         # cotacao_dolar=self.get_clipboard()
-        print(cotacao_dolar)
+        nove_dolares_em_real = cotacao_dolar * 9
+        print(f'9 dólares são {nove_dolares_em_real} em real')
         
         
 
@@ -75,7 +76,7 @@ class Bot(WebBot):
         # )
 
         # Wait for 10 seconds before closing
-        self.wait(1000000)
+        self.wait(1000)
 
         # Stop the browser and clean up
         self.stop_browser()
